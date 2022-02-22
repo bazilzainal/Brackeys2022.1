@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class FollowScript : MonoBehaviour
 {
 
-    [SerializeField] Slider mSlider;
     private float distToPlayer;
     [SerializeField] GameObject player;
     [SerializeField] float followSpeedMin = 10f;
@@ -24,8 +23,6 @@ public class FollowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mSlider.value = magDeltaLimit;
-        mSlider.maxValue = 10f;
     }
 
     // Update is called once per frame
