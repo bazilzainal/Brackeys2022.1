@@ -11,6 +11,11 @@ public class EnemyMovementHorizontal : MonoBehaviour
     float rightLimit;
     float leftLimit;
 
+    Vector3 lastpos;
+
+    float timeLimit = 0.7f;
+    float lastCheckTime = 0;
+    
     void Start() {
         rightLimit = transform.position.x + rightLimitMagnitude;
         leftLimit = transform.position.x - 5 - leftLimitMagnitude;
@@ -20,10 +25,26 @@ public class EnemyMovementHorizontal : MonoBehaviour
     {
         // Makes enemy move within a certain position
         var pos = transform.position;
-        if (pos.x <= leftLimit || pos.x >= rightLimit ) {
-            movement *= -1;
+
+        // Update limit if enemy goes out of bounds
+        if (pos.x <= leftLimit) {
+            movement = -movement;
+            leftLimit = pos.x;
+        } else if (pos.x >= rightLimit) {
+            movement = -movement;
+            rightLimit = pos.x;
         }
         transform.position += movement * Time.deltaTime;
+
+        // Change direction of enemy if stuck
+        if (Time.time - lastCheckTime > timeLimit) {
+            if (pos.x - lastpos.x < movement.x) {
+                movement = -movement;
+                lastpos = transform.position;
+                lastCheckTime = Time.time;
+            }
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
