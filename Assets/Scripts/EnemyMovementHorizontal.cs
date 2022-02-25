@@ -6,15 +6,15 @@ public class EnemyMovementHorizontal : MonoBehaviour
 {
     [SerializeField] float rightLimitMagnitude = 1;
     [SerializeField] float leftLimitMagnitude = 1;
-    [SerializeField] float movementMagnitude = 1;
-    float movement;
+    [SerializeField] float movementMagnitude = 30;
+    Vector3 movement;
     float rightLimit;
     float leftLimit;
 
     void Start() {
         rightLimit = transform.position.x + rightLimitMagnitude;
         leftLimit = transform.position.x - 5 - leftLimitMagnitude;
-        movement = 0.01f * movementMagnitude;
+        movement = new Vector3(-movementMagnitude, 0, 0);
     }
     void Update()
     {
@@ -23,8 +23,7 @@ public class EnemyMovementHorizontal : MonoBehaviour
         if (pos.x <= leftLimit || pos.x >= rightLimit ) {
             movement *= -1;
         }
-        pos.x += movement;
-        transform.position = pos;
+        transform.position += movement * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
