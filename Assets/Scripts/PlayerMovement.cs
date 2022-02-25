@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float lowJumpMultiplier;
 
     // Double Jump
-    public float subJumpMultiplier = 2;
+    public float subJumpMultiplier = 1.2f;
     public int playerJumps = 2;
     private int tempPlayerJumps;
 
@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 dir = new Vector2(xRaw, yRaw);
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
-        Debug.Log(Time.deltaTime);
     }
 
     // private IEnumerator StopDashing() {
