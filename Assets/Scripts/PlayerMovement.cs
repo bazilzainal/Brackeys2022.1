@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     float y;
     float xRaw;
     float yRaw;
-    bool isGrounded = true;
+    [SerializeField] bool isGrounded = true;
 
     // Better Jumps
     public float fallMultiplier;
