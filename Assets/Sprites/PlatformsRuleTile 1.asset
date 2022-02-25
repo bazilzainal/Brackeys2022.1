@@ -12,17 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: PlatformsRuleTile 1
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 1993111798, guid: 88d051b90c2424525971f0182c2dd48a, type: 3}
+  m_DefaultSprite: {fileID: -1650398740, guid: 0d64db0062fb7ca40ae0dcb0cf0c270a, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-<<<<<<< Updated upstream
     - {fileID: -1650398740, guid: 0d64db0062fb7ca40ae0dcb0cf0c270a, type: 3}
-=======
-    - {fileID: -1411848274, guid: 9beff7f5cb3994416a6cc7fa3309aca8, type: 3}
->>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -39,11 +35,7 @@ MonoBehaviour:
     m_RuleTransform: 1
   - m_Id: 1
     m_Sprites:
-<<<<<<< Updated upstream
     - {fileID: -1230328790, guid: 0d64db0062fb7ca40ae0dcb0cf0c270a, type: 3}
-=======
-    - {fileID: -1853199503, guid: 9beff7f5cb3994416a6cc7fa3309aca8, type: 3}
->>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -61,11 +53,7 @@ MonoBehaviour:
     m_RuleTransform: 1
   - m_Id: 3
     m_Sprites:
-<<<<<<< Updated upstream
     - {fileID: -1230328790, guid: 0d64db0062fb7ca40ae0dcb0cf0c270a, type: 3}
-=======
-    - {fileID: -1380495805, guid: 9beff7f5cb3994416a6cc7fa3309aca8, type: 3}
->>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -83,11 +71,7 @@ MonoBehaviour:
     m_RuleTransform: 1
   - m_Id: 4
     m_Sprites:
-<<<<<<< Updated upstream
     - {fileID: -1650398740, guid: 0d64db0062fb7ca40ae0dcb0cf0c270a, type: 3}
-=======
-    - {fileID: 1710246351, guid: 9beff7f5cb3994416a6cc7fa3309aca8, type: 3}
->>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
