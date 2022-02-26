@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public float jumpForce = 25f;
+    public float speed = 8f;
+    public float jumpForce = 12f;
     private Rigidbody2D rb;
     float x;
     float y;
     float xRaw;
     float yRaw;
     [SerializeField] bool isGrounded = true;
+    [SerializeField] private AudioSource jumpSoundFx;
 
     // Better Jumps
-    public float fallMultiplier;
-    public float lowJumpMultiplier;
+    public float fallMultiplier = 6f;
+    public float lowJumpMultiplier = 4f;
 
     // Double Jump
-    public float subJumpMultiplier = 2;
+    public float subJumpMultiplier = 0.8f;
     public int playerJumps = 2;
     private int tempPlayerJumps;
 
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && tempPlayerJumps > 0)
         {
+            jumpSoundFx.Play();
             tempPlayerJumps--;
             Jump(Vector2.up);
             isGrounded = false;
@@ -89,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 dir = new Vector2(xRaw, yRaw);
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
-        Debug.Log(Time.deltaTime);
     }
 
     // private IEnumerator StopDashing() {
@@ -113,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (tempPlayerJumps == (playerJumps - 1)) {
             rb.velocity += jumpDir * jumpForce;
         } else {
-            rb.velocity += jumpDir * (jumpForce / subJumpMultiplier);
+            rb.velocity += jumpDir * jumpForce * subJumpMultiplier;
         }
     }
 }
