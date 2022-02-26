@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoundaryScript : MonoBehaviour
+public class ColliderGenScript : MonoBehaviour
 {
 
     public float colDepth = 2f;
@@ -39,8 +39,10 @@ public class BoundaryScript : MonoBehaviour
         leftCollider.gameObject.AddComponent<BoxCollider2D>();
         deathCollider.gameObject.AddComponent<BoxCollider2D>();
 
-        //Add tag to deathCollider
+        //Add tag to deathCollider and leftCollider;
         deathCollider.gameObject.tag = "Death";
+        leftCollider.gameObject.tag = "Pusher";
+
 
         //Make them the child of whatever object this script is on, preferably on the Camera so the objects move with the camera without extra scripting
         // topCollider.parent = transform;
