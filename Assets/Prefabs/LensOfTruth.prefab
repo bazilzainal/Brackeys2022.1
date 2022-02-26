@@ -182,4 +182,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  offset: 18.5
+  offset: 18

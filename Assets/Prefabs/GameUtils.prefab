@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1777616830053553499}
+    - target: {fileID: 1325202070191858061, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
+      propertyPath: offset
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1325202070191858062, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
       propertyPath: m_Name
       value: LensOfTruth

@@ -927,6 +927,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!1 &614496511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8028227717550949911, guid: 6e14945e5145d2d439ec001d0b118819, type: 3}
+  m_PrefabInstance: {fileID: 1917092273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &621880280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1325202070191858061, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 614496511}
     - target: {fileID: 1325202070191858062, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
       propertyPath: m_Name
       value: LensOfTruth
@@ -9602,6 +9611,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 950739649}
+    - target: {fileID: 8028227717175639055, guid: 6e14945e5145d2d439ec001d0b118819, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8028227717550949911, guid: 6e14945e5145d2d439ec001d0b118819, type: 3}
       propertyPath: m_Name
       value: Main Camera

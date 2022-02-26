@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bunny-2Ways
       objectReference: {fileID: 0}
+    - target: {fileID: 4547401815495944866, guid: ad7282f08c79ed34bbbe8cc4bc2b7f88, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4547401815495944871, guid: ad7282f08c79ed34bbbe8cc4bc2b7f88, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6049,6 +6053,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1333362149}
+    - target: {fileID: 1777616829627903929, guid: b5906f48e08b12b41a836883c92f7233, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.44888878
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777616830053553501, guid: b5906f48e08b12b41a836883c92f7233, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1777616831267348708, guid: b5906f48e08b12b41a836883c92f7233, type: 3}
       propertyPath: player
       value: 
