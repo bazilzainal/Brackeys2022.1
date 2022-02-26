@@ -10,7 +10,7 @@ public class EnemyMovementHorizontal : MonoBehaviour
     Vector3 movement;
     float rightLimit;
     float leftLimit;
-
+    private Animator animator;
     Vector3 lastpos;
 
     float timeLimit = 0.5f;
@@ -20,6 +20,7 @@ public class EnemyMovementHorizontal : MonoBehaviour
         rightLimit = transform.position.x + rightLimitMagnitude;
         leftLimit = transform.position.x - 5 - leftLimitMagnitude;
         movement = new Vector3(-movementMagnitude, 0, 0);
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -52,6 +53,9 @@ public class EnemyMovementHorizontal : MonoBehaviour
                 }
             }
         }
+
+        bool flipped = movement.x > 0;
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
 
     }
 
