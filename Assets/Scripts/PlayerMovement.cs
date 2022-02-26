@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float xRaw;
     float yRaw;
     [SerializeField] bool isGrounded = true;
+    [SerializeField] private AudioSource jumpSoundFx;
 
     // Better Jumps
     public float fallMultiplier;
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && tempPlayerJumps > 0)
         {
+            jumpSoundFx.Play();
             tempPlayerJumps--;
             Jump(Vector2.up);
             isGrounded = false;

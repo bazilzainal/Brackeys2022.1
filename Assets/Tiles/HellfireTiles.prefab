@@ -221,7 +221,15 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+--- !u!114 &6292760524232748786
+=======
+--- !u!114 &7608695122459443066
+>>>>>>> Stashed changes
+=======
 --- !u!114 &6999903167831445391
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
