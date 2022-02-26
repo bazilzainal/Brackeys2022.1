@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     float yRaw;
     [SerializeField] bool isGrounded = true;
     [SerializeField] private AudioSource jumpSoundFx;
-    [SerializeField] private Animator anim;
 
     // Better Jumps
     public float fallMultiplier = 6f;
@@ -35,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && tempPlayerJumps > 0)
         {
-            anim.SetBool("isJumping", true);
             jumpSoundFx.Play();
             tempPlayerJumps--;
             Jump(Vector2.up);
@@ -61,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.y < 0) // Triggered right after reaching max height
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                anim.SetBool("isJumping", false);
-                anim.SetBool("isFalling", true);
             }
             else if (tempPlayerJumps == (playerJumps - 1) && rb.velocity.y > 0 && !Input.GetButton("Jump")) // If going up, but jump is not pressed
             {
@@ -108,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            anim.SetBool("isFalling", false);
             isGrounded = true;
         }
     }
