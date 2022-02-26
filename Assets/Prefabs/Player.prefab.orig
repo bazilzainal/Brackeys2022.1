@@ -216,9 +216,15 @@ GameObject:
   - component: {fileID: 7541453351286780376}
   - component: {fileID: 1657769240996268509}
   - component: {fileID: 1333362156}
+<<<<<<< HEAD
   - component: {fileID: 1333362164}
   - component: {fileID: 1333362166}
   - component: {fileID: 1333362173}
+=======
+  - component: {fileID: 1333362157}
+  - component: {fileID: 1333362164}
+  - component: {fileID: 1333362166}
+>>>>>>> main
   - component: {fileID: 1333362155}
   m_Layer: 0
   m_Name: Player
@@ -241,8 +247,13 @@ Transform:
   m_Children:
   - {fileID: 516797523}
   - {fileID: 1303858123}
+<<<<<<< HEAD
   - {fileID: 8625444289925289988}
   - {fileID: 2434558118150205697}
+=======
+  - {fileID: 4704955229432645374}
+  - {fileID: 6699453670409851633}
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -335,7 +346,10 @@ MonoBehaviour:
   jumpForce: 12
   isGrounded: 1
   jumpSoundFx: {fileID: 1333362164}
+<<<<<<< HEAD
   anim: {fileID: 0}
+=======
+>>>>>>> main
   fallMultiplier: 6
   lowJumpMultiplier: 4
   subJumpMultiplier: 1.2
@@ -756,6 +770,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336157b260a0645abb1c9ad974f201d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  restartDelay: 1.6
+  deathSoundFx: {fileID: 1333362166}
+--- !u!1 &8807813683297299986
+=======
   restartDelay: 0.5
   deathSoundFx: {fileID: 1333362156}
 --- !u!82 &1333362164
@@ -965,6 +984,7 @@ MonoBehaviour:
   restartDelay: 1.6
   deathSoundFx: {fileID: 1333362166}
 --- !u!1 &8304898164848105469
+>>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -972,8 +992,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 8625444289925289988}
   - component: {fileID: 8496195813811101570}
+=======
+  - component: {fileID: 4704955229432645374}
+  - component: {fileID: 1882724777114246131}
+>>>>>>> main
   m_Layer: 0
   m_Name: ColliderBody
   m_TagString: Untagged
@@ -981,28 +1006,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &8625444289925289988
+=======
+--- !u!4 &4704955229432645374
+>>>>>>> main
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 8807813683297299986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.42, y: -0.39, z: 0}
+=======
+  m_GameObject: {fileID: 8304898164848105469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.103, z: 0}
+>>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7541453351286780377}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!61 &8496195813811101570
+=======
+--- !u!61 &1882724777114246131
+>>>>>>> main
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 8807813683297299986}
+=======
+  m_GameObject: {fileID: 8304898164848105469}
+>>>>>>> main
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 3fb0c1485cb0847b4a5cbe70e56f77a4, type: 2}

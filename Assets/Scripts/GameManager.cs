@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int playerLives = 3;
     [SerializeField] TextMeshProUGUI livesText;
 
+    int score = 0;
+
     private void Awake()
     {
         // Singleton pattern. Make sure only 1 GameManager is ever instantiated.
@@ -71,5 +73,13 @@ public class GameManager : MonoBehaviour
     public int GetPlayerLives()
     {
         return playerLives;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void addScore(int toAdd) {
+        score += toAdd;
     }
 }

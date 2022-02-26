@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
         {
             KillPlayer();
         }
+
+        if (other.gameObject.tag == ("Coin")) {
+            Coin coin = other.gameObject.GetComponent<Coin>();
+            getCoin(other, coin);
+        } 
     }
 
     // Triggers on collision
@@ -32,6 +37,13 @@ public class PlayerController : MonoBehaviour
         {
             KillPlayer();
         }
+    }
+
+    private void getCoin(Collider2D other, Coin coin) {
+        if (coin.getPickUpStatus()) return;
+            coin.pickUp(); // Set coin's pick up status to true
+            gm.addScore(10);
+            Destroy(other.gameObject); //Remove coin gameObject that was pickedup
     }
 
     private void KillPlayer()
