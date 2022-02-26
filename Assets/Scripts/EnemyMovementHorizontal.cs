@@ -13,7 +13,7 @@ public class EnemyMovementHorizontal : MonoBehaviour
 
     Vector3 lastpos;
 
-    float timeLimit = 0.7f;
+    float timeLimit = 0.5f;
     float lastCheckTime = 0;
     
     void Start() {
@@ -38,10 +38,18 @@ public class EnemyMovementHorizontal : MonoBehaviour
 
         // Change direction of enemy if stuck
         if (Time.time - lastCheckTime > timeLimit) {
-            if (pos.x - lastpos.x < movement.x) {
-                movement = -movement;
-                lastpos = transform.position;
-                lastCheckTime = Time.time;
+            if (movement.x < 0) {
+                if (pos.x - lastpos.x > movement.x) {
+                    movement = -movement;
+                    lastpos = transform.position;
+                    lastCheckTime = Time.time;
+                }
+            } else {
+                if (lastpos.x - pos.x < movement.x) {
+                    movement = -movement;
+                    lastpos = transform.position;
+                    lastCheckTime = Time.time;
+                }
             }
         }
 
