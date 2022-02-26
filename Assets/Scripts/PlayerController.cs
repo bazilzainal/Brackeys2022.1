@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameManager gm;
     [SerializeField] float restartDelay = 2f;
+    [SerializeField] private AudioSource deathSoundFx;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Death")
         {
+            deathSoundFx.Play();
             gm.Invoke("Restart", restartDelay);
             // gm.Restart();
         }
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Death")
         {
+            deathSoundFx.Play();
             gm.Invoke("Restart", restartDelay);
 
         }

@@ -1366,6 +1366,7 @@ Transform:
   m_Father: {fileID: 1846408698}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/LevelTemplate.unity
 --- !u!114 &811549355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,6 +1725,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main:Assets/Scenes/LevelTemplate1 1.unity
 --- !u!1 &878084706
 GameObject:
   m_ObjectHideFlags: 0
@@ -8312,6 +8315,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
+<<<<<<< HEAD:Assets/Scenes/LevelTemplate.unity
       _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
@@ -8431,6 +8435,8 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
+=======
+>>>>>>> main:Assets/Scenes/LevelTemplate1 1.unity
       _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
@@ -8444,6 +8450,7 @@ Sprite:
     settingsRaw: 64
     uvTransform: {x: 4, y: 2, z: 4, w: 2}
     downscaleMultiplier: 1
+<<<<<<< HEAD:Assets/Scenes/LevelTemplate.unity
   m_AtlasRD:
     serializedVersion: 3
     texture: {fileID: 0}
@@ -8535,6 +8542,8 @@ Sprite:
     settingsRaw: 64
     uvTransform: {x: 4, y: 2, z: 4, w: 2}
     downscaleMultiplier: 1
+=======
+>>>>>>> main:Assets/Scenes/LevelTemplate1 1.unity
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
