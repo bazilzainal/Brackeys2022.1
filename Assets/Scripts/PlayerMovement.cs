@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public float jumpForce = 25f;
+    public float speed = 8f;
+    public float jumpForce = 12f;
     private Rigidbody2D rb;
     float x;
     float y;
@@ -15,11 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundFx;
 
     // Better Jumps
-    public float fallMultiplier;
-    public float lowJumpMultiplier;
+    public float fallMultiplier = 6f;
+    public float lowJumpMultiplier = 4f;
 
     // Double Jump
-    public float subJumpMultiplier = 1.2f;
+    public float subJumpMultiplier = 0.8f;
     public int playerJumps = 2;
     private int tempPlayerJumps;
 
@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (tempPlayerJumps == (playerJumps - 1)) {
             rb.velocity += jumpDir * jumpForce;
         } else {
-            rb.velocity += jumpDir * (jumpForce / subJumpMultiplier);
+            rb.velocity += jumpDir * jumpForce * subJumpMultiplier;
         }
     }
 }
