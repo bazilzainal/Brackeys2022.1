@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float restartDelay = 2f;
     [SerializeField] private AudioSource deathSoundFx;
+    [SerializeField] private AudioSource coinSoundFx;
 
     GameManager gm;
     bool isDead = false;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == ("Coin")) {
             Coin coin = other.gameObject.GetComponent<Coin>();
             getCoin(other, coin);
+            coinSoundFx.Play();
         } 
     }
 
