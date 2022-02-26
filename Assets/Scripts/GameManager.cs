@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         this.playerLives --;
         livesText.text = playerLives.ToString();
-        score = 0;
+
         Debug.Log("Remove life");
         Restart();
 
