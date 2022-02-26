@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int playerLives = 3;
     [SerializeField] TextMeshProUGUI livesText;
 
+    [SerializeField] TextMeshProUGUI scoreText;
+
     int score = 0;
 
     private void Awake()
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         livesText.text = playerLives.ToString();
+        scoreText.text = padStringWithZeros(3, "0");
     }
 
     public IEnumerator ProcessPlayerDeath(float delay)
@@ -81,5 +84,13 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int toAdd) {
         score += toAdd;
+        scoreText.text = padStringWithZeros(3, score.ToString());
+    }
+
+    private string padStringWithZeros(int targetedStringLength, string s) {
+        while (s.Length < targetedStringLength) {
+            s = "0" + s;
+        }
+        return s;
     }
 }
