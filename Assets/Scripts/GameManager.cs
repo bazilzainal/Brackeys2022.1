@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         this.playerLives --;
         livesText.text = playerLives.ToString();
         score = 0;
+        scoreText.text = padStringWithZeros(3, score.ToString());
         Debug.Log("Remove life");
         Restart();
 
