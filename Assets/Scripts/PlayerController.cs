@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float restartDelay = 2f;
+    [SerializeField] float finishDelay = 1f;
     [SerializeField] private AudioSource deathSoundFx;
     [SerializeField] private AudioSource coinSoundFx;
 
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = GameObject.Find("SessionManager").GetComponent<GameManager>();
         
     }
     // Triggers when player falls
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "FinishTag")
         {
             Debug.Log("Finish game!");
-            gm.FinishLevel();
+            StartCoroutine(gm.FinishLevel(finishDelay));
         }
     }
 

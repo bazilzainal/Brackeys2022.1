@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelTemplate.unity
     guid: d12498f00d565bc488cce2603dad6b8c
   - enabled: 1
-    path: Assets/Scenes/LevelTemplate 1.unity
-    guid: c3f620eccaa5f1b4b895a9b96db03265
-  - enabled: 1
     path: Assets/Scenes/May_Level01.unity
     guid: 897446429e356db4c962b72fc7c66e6a
   - enabled: 1
