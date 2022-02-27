@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] static int playerLives = 3;
+    // [SerializeField] int playerLives = 3;
+    [SerializeField] int playerDeaths = 0;
     [SerializeField] TextMeshProUGUI livesText;
 
     [SerializeField] TextMeshProUGUI scoreText;
 
-    [SerializeField] static int score = 0;
+    [SerializeField] int score = 0;
 
     private void Awake()
     {
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        livesText.text = playerLives.ToString();
+        // livesText.text = playerLives.ToString();
+        livesText.text = playerDeaths.ToString();
         scoreText.text = padStringWithZeros(3, "0");
     }
 
@@ -39,14 +41,15 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (playerLives > 1)
-        {
-            TakeLife();
-        }
-        else
-        {
-            ResetGameSession();
-        }
+        AddDeath();
+        //if (playerLives > 1)
+        //{
+        //    // TakeLife();
+        //}
+        //else
+        //{
+        //    ResetGameSession();
+        //}
 
     }
 
@@ -56,15 +59,27 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void TakeLife()
+    //void TakeLife()
+    //{
+    //    this.playerLives--;
+    //    livesText.text = playerLives.ToString();
+
+    //    score = 0;
+    //    scoreText.text = padStringWithZeros(3, score.ToString());
+    //    Debug.Log("Remove life");
+    //    Restart();
+
+    //}
+
+    void AddDeath()
     {
-        GameManager.playerLives--;
-        livesText.text = playerLives.ToString();
+        this.playerDeaths++;
+        livesText.text = playerDeaths.ToString();
+
         score = 0;
         scoreText.text = padStringWithZeros(3, score.ToString());
         Debug.Log("Remove life");
         Restart();
-
     }
 
     // TODO Change the way index is gotten
@@ -81,10 +96,10 @@ public class GameManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public int GetPlayerLives()
-    {
-        return playerLives;
-    }
+    //public int GetPlayerLives()
+    //{
+    //    return playerLives;
+    //}
 
     public int getScore()
     {
@@ -93,8 +108,8 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int toAdd)
     {
-        score += toAdd;
-        scoreText.text = padStringWithZeros(3, score.ToString());
+        this.score += toAdd;
+        this.scoreText.text = padStringWithZeros(3, score.ToString());
     }
 
     private string padStringWithZeros(int targetedStringLength, string s)

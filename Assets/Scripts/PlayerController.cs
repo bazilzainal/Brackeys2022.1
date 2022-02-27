@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = GameObject.Find("SessionManager").GetComponent<GameManager>();
         
     }
     // Triggers when player falls
