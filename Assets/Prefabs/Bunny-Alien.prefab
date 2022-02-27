@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1608321516657177792}
   - component: {fileID: 1608321516657177793}
-  - component: {fileID: 9071610448940017062}
   - component: {fileID: 649897488391906414}
+  - component: {fileID: 1232073699788557356}
   m_Layer: 0
   m_Name: Bunny-Alien
   m_TagString: Death
@@ -51,22 +51,6 @@ MonoBehaviour:
   rightLimitMagnitude: 1
   leftLimitMagnitude: 1
   movementMagnitude: 3
---- !u!58 &9071610448940017062
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608321516657177797}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &649897488391906414
 Rigidbody2D:
   serializedVersion: 4
@@ -88,6 +72,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &1232073699788557356
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608321516657177797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13421535, y: 0.050082624}
+  m_Size: {x: 0.64826393, y: 0.91132224}
+  m_Direction: 0
 --- !u!1 &5042331641641135725
 GameObject:
   m_ObjectHideFlags: 0
