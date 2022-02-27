@@ -9,9 +9,13 @@ public class PushScript : MonoBehaviour
     [SerializeField] float currX;
     [SerializeField] float currY;
 
-    [SerializeField] float worldYLimit = -10f;
+    [Header("World Limits")]
+    [SerializeField] float worldYUpLimit = 2f;
 
-    private void Start() {
+    [SerializeField] float worldYLowLimit = -1f;
+
+    private void Start()
+    {
         currX = transform.position.x;
     }
 
@@ -24,9 +28,13 @@ public class PushScript : MonoBehaviour
 
         currY = player.transform.position.y;
 
-        if (currY < worldYLimit)
+        if (currY < worldYLowLimit)
         {
-            currY = worldYLimit;
+            currY = worldYLowLimit;
+        }
+        else if (currY > worldYUpLimit)
+        {
+            currY = worldYUpLimit;
         }
 
 
@@ -35,7 +43,9 @@ public class PushScript : MonoBehaviour
 
             transform.position = new Vector3(currX, currY, player.transform.position.z);
 
-        } else {
+        }
+        else
+        {
             transform.position = new Vector3(playerX, currY, player.transform.position.z);
             currX = playerX;
         }
