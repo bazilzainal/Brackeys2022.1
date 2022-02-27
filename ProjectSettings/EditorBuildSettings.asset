@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: ee52fabdd2ac13a4180195b4603b9ff3
   - enabled: 1
-    path: Assets/Scenes/LevelTemplate.unity
-    guid: d12498f00d565bc488cce2603dad6b8c
+    path: Assets/Scenes/01_Baz.unity
+    guid: 10ada9367e1406744989959e2e79a18e
+  - enabled: 1
+    path: Assets/Scenes/02_Baz.unity
+    guid: ab07383290c9b4646804e7a3a79b25c5
   - enabled: 1
     path: Assets/Scenes/May_Level01.unity
     guid: 897446429e356db4c962b72fc7c66e6a
   - enabled: 1
     path: Assets/Scenes/kk_Level01.unity
     guid: 29abcd727fd5eed48a3e561cdf4b1159
+  - enabled: 1
+    path: Assets/Scenes/Sankiew.unity
+    guid: 8d2bdb1aed7e383468b8b776ad7c05fe
   m_configObjects: {}
