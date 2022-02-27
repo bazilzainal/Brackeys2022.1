@@ -8,6 +8,7 @@ TagManager:
   - Pusher
   - Death
   - Coin
+  - FinishTag
   layers:
   - Default
   - TransparentFX

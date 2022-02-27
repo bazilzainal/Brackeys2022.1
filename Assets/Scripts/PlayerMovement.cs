@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 8f;
+    public float speed;
     public float jumpForce = 12f;
     private Rigidbody2D rb;
     float x;
@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool isGrounded = true;
     [SerializeField] private AudioSource jumpSoundFx;
     [SerializeField] private Animator anim;
+    private float dirX;
+    private bool facingRight = true;
 
     // Better Jumps
     public float fallMultiplier = 6f;
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        speed = 8f;
     }
 
     // Update is called once per frame
@@ -48,6 +51,32 @@ public class PlayerMovement : MonoBehaviour
         }
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
+
+        //Check if moving to right
+        if (xRaw > 0 && !facingRight)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            facingRight = true;
+        }
+
+        //Check if moving to left
+        if (xRaw < 0 && facingRight)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            facingRight = false;
+        }
+
+        //Check if running
+        dirX = xRaw * speed;
+
+        if (Mathf.Abs(dirX) > 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
 
         if (Input.GetButtonDown("Jump") && tempPlayerJumps > 0)
         {
@@ -69,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+
 
         // if (Input.GetKeyDown(KeyCode.B) && canDash) {
         //     isDashing = true;

@@ -13,10 +13,14 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        gm = FindObjectOfType<GameManager>();
         isDead = false;
     }
 
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+        
+    }
     // Triggers when player falls
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,6 +34,12 @@ public class PlayerController : MonoBehaviour
             getCoin(other, coin);
             coinSoundFx.Play();
         } 
+
+        if (other.tag == "FinishTag")
+        {
+            Debug.Log("Finish game!");
+            gm.FinishLevel();
+        }
     }
 
     // Triggers on collision
