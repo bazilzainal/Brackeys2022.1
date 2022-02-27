@@ -1317,6 +1317,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 614496511}
+    - target: {fileID: 1325202070191858061, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
+      propertyPath: offset
+      value: -2.66
+      objectReference: {fileID: 0}
     - target: {fileID: 1325202070191858062, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
       propertyPath: m_Name
       value: LensOfTruth
@@ -1328,6 +1332,10 @@ PrefabInstance:
     - target: {fileID: 1325202070191858063, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325202070191858063, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.48
       objectReference: {fileID: 0}
     - target: {fileID: 1325202070191858063, guid: 642c94cfb9155ff4f81f46df5fe63210, type: 3}
       propertyPath: m_LocalPosition.x
