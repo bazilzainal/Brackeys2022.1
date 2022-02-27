@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     // [SerializeField] int playerLives = 3;
     [SerializeField] int playerDeaths = 0;
     [SerializeField] TextMeshProUGUI livesText;
-
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI finishText;
 
     [SerializeField] int score = 0;
 
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         // livesText.text = playerLives.ToString();
         livesText.text = playerDeaths.ToString();
         scoreText.text = padStringWithZeros(3, "0");
+        finishText.gameObject.SetActive(false);
     }
 
     public IEnumerator ProcessPlayerDeath(float delay)
@@ -121,8 +122,11 @@ public class GameManager : MonoBehaviour
         return s;
     }
 
-    public void FinishLevel()
+    public IEnumerator FinishLevel(float delay)
     {
+        finishText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        finishText.gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
