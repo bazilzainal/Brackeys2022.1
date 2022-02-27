@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            anim.SetBool("isFalling", false);
             tempPlayerJumps = playerJumps;
         }
         xRaw = Input.GetAxisRaw("Horizontal");
@@ -108,7 +109,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            anim.SetBool("isFalling", false);
             isGrounded = true;
         }
     }
