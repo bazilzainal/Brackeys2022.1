@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int playerLives = 3;
+    [SerializeField] static int playerLives = 3;
     [SerializeField] TextMeshProUGUI livesText;
 
     [SerializeField] TextMeshProUGUI scoreText;
 
-    int score = 0;
+    [SerializeField] static int score = 0;
 
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     void TakeLife()
     {
-        this.playerLives--;
+        GameManager.playerLives--;
         livesText.text = playerLives.ToString();
         score = 0;
         scoreText.text = padStringWithZeros(3, score.ToString());
@@ -93,8 +93,8 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int toAdd)
     {
-        activeManager.score += toAdd;
-        activeManager.scoreText.text = padStringWithZeros(3, score.ToString());
+        score += toAdd;
+        scoreText.text = padStringWithZeros(3, score.ToString());
     }
 
     private string padStringWithZeros(int targetedStringLength, string s)
