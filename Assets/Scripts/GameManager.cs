@@ -67,10 +67,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // TODO Change this
+    // TODO Change the way index is gotten
     void ResetGameSession()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(gameObject);
+    }
+
+    public void ExitToMenu()
+    {
+        // Hardcode for now
+        SceneManager.LoadScene(0);
         Destroy(gameObject);
     }
 
