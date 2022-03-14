@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/03_Baz.unity
     guid: ab07383290c9b4646804e7a3a79b25c5
   - enabled: 1
-    path: Assets/Scenes/May_Level01.unity
+    path: Assets/Scenes/May_Level_Hard.unity
     guid: 897446429e356db4c962b72fc7c66e6a
   - enabled: 1
     path: Assets/Scenes/kk_Level01.unity
