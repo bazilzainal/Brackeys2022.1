@@ -11,11 +11,14 @@ public class PlayerMovement : MonoBehaviour
     float y;
     float xRaw;
     float yRaw;
-    [SerializeField] bool isGrounded = true;
+    [SerializeField] public bool isGrounded = true;
     [SerializeField] private AudioSource jumpSoundFx;
     [SerializeField] private Animator anim;
     private float dirX;
     private bool facingRight = true;
+    private BoxCollider2D boxCollider2d;
+    [SerializeField] Transform groundCheckCollider;
+    [SerializeField] LayerMask groundLayer;
 
     // Better Jumps
     public float fallMultiplier = 6f;
@@ -24,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Double Jump
     public float subJumpMultiplier = 0.8f;
     public int playerJumps = 2;
-    private int tempPlayerJumps;
+    public int tempPlayerJumps;
 
     // // Dashing
     // public float dashingVelocity = 14f;
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         speed = 8f;
+        boxCollider2d = transform.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -47,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             anim.SetBool("isFalling", false);
-            tempPlayerJumps = playerJumps;
         }
         xRaw = Input.GetAxisRaw("Horizontal");
         yRaw = Input.GetAxisRaw("Vertical");
@@ -82,9 +85,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isJumping", true);
             jumpSoundFx.Play();
-            tempPlayerJumps--;
             Jump(Vector2.up);
-            isGrounded = false;
         }
 
         //Better Jump Feel
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isJumping", false);
             anim.SetBool("isFalling", true);
         }
-        else if (tempPlayerJumps == (playerJumps - 1) && rb.velocity.y > 0 && !Input.GetButton("Jump")) // If going up, but jump is not pressed
+        else if (tempPlayerJumps == playerJumps && rb.velocity.y > 0 && !Input.GetButton("Jump")) // If going up, but jump is not pressed
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
@@ -125,29 +126,37 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        groundCheck();
         Vector2 dir = new Vector2(xRaw, yRaw);
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
     }
-
     // private IEnumerator StopDashing() {
     //     yield return new WaitForSeconds(dashingTime);
     //     isDashing = false;
     // }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Floor")
-        {
+    void groundCheck() {
+        isGrounded = false; 
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, 0.2f, groundLayer);
+        if (colliders.Length > 0) {
             isGrounded = true;
+            tempPlayerJumps = playerJumps;
         }
+    }
+
+    IEnumerator myWaitCoroutine()
+    {
+        yield return new WaitForSeconds(0.05f);
+        tempPlayerJumps--;
     }
 
     void Jump(Vector2 jumpDir)
     {
+        StartCoroutine(myWaitCoroutine());
+
         // Set y velocity to 0 first
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        if (tempPlayerJumps == (playerJumps - 1))
+        if (tempPlayerJumps == playerJumps)
         {
             rb.velocity += jumpDir * jumpForce;
         }
@@ -155,5 +164,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += jumpDir * jumpForce * subJumpMultiplier;
         }
+        
     }
 }
+
