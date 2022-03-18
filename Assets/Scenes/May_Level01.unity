@@ -1510,7 +1510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621880282}
   - component: {fileID: 621880281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformGrid (real)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,6 +1873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 636227975691498878, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: m_TagString
+      value: Leg
+      objectReference: {fileID: 0}
     - target: {fileID: 6217881404360192120, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
       propertyPath: m_Name
       value: Jumpman (Player)
@@ -1883,11 +1887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6217881404360192124, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.640069
+      value: -6.749
       objectReference: {fileID: 0}
     - target: {fileID: 6217881404360192124, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.98063374
+      value: -0.864
       objectReference: {fileID: 0}
     - target: {fileID: 6217881404360192124, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1920,6 +1924,26 @@ PrefabInstance:
     - target: {fileID: 6217881404360192124, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217881404360192125, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: isGrounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217881404360192125, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: playerJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217881404360192125, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217881404360192125, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: groundCheckCollider
+      value: 
+      objectReference: {fileID: 1565966024}
+    - target: {fileID: 7069517210245567316, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
@@ -3754,6 +3778,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5399412045145836649, guid: 0d97405e04548f34ead6c7881a57048e, type: 3}
   m_PrefabInstance: {fileID: 700729872}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1565966023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565966024}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565966024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565966023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.075, y: -0.503, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1957753974}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1571109100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4114,7 +4169,7 @@ GameObject:
   - component: {fileID: 1676376109}
   - component: {fileID: 1676376108}
   - component: {fileID: 1676376110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformTiles
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -13375,7 +13430,7 @@ GameObject:
   - component: {fileID: 1808529181}
   - component: {fileID: 1808529180}
   - component: {fileID: 1808529179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformTilesBlue
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -24876,7 +24931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8028227717550950123, guid: 6e14945e5145d2d439ec001d0b118819, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9636102
+      value: 0.44888878
       objectReference: {fileID: 0}
     - target: {fileID: 8028227717550950123, guid: 6e14945e5145d2d439ec001d0b118819, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25117,6 +25172,11 @@ PrefabInstance:
 --- !u!1 &1957753965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6217881404360192120, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
+  m_PrefabInstance: {fileID: 775364748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1957753974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6217881404360192124, guid: 76f96bf4bda8e00439f74ba954e40457, type: 3}
   m_PrefabInstance: {fileID: 775364748}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1965330927
